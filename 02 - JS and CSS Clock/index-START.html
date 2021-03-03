@@ -63,11 +63,25 @@
       position: absolute;
       top: 50%;
     }
-
+    
   </style>
 
   <script>
+    document.querySelector(".second-hand").style.transformOrigin = "100%";
+    document.querySelector(".min-hand").style.transformOrigin = "100%";
+    document.querySelector(".hour-hand").style.transformOrigin = "100%";
 
+    function time() {
+      var d = new Date();
+      var s = d.getSeconds();
+      var m = d.getMinutes();
+      var h = d.getHours();
+      document.querySelector(".second-hand").style.transform = `rotate(${90 + s * 6}deg)`
+      document.querySelector(".min-hand").style.transform = `rotate(${90 + m * 6}deg)`
+      document.querySelector(".hour-hand").style.transform = `rotate(${90 + h * 30}deg)`
+    }
+
+    setInterval(time, 1000);
 
   </script>
 </body>
