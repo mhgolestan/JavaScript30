@@ -45,6 +45,26 @@
   </style>
 
   <script>
+    var img_el = document.querySelector("img");
+
+    var spacing_slider = document.getElementById("spacing");
+    spacing_slider.oninput = function() {
+      spacing_slider.value = this.value;
+      img_el.style.border = `${spacing_slider.value}px solid ${base_color.value}`;
+    }
+
+    var base_color = document.getElementById("base");
+    base_color.oninput = function() {
+      base_color.value = this.value;
+      img_el.style.border = `${spacing_slider.value}px solid ${base_color.value}`;
+    }
+
+    var blur_slider = document.getElementById("blur");
+    blur_slider.oninput = function() {
+      blur_slider.value = this.value;
+      img_el.style.filter = `blur(${blur_slider.value}px)`;
+    }
+    
   </script>
 
 </body>
